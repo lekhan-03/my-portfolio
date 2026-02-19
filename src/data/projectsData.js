@@ -71,7 +71,7 @@ const projectsData = [
       "Focused on reducing diagnostic errors and increasing accessibility in resource-constrained medical environments."
     ],
     image: "https://res.cloudinary.com/ddgxphtda/image/upload/v1769852346/Kaggle/WhatsApp_Image_2026-01-31_at_2.37.59_PM.jpg", // Medical Tech Placeholder
-    tech: ["MedGemma 1.5", "Python", "Google HeAR", "NF4 Quantization", "React", "NVIDIA Tesla T4"]
+    tech: ["MedGemma 1.5", "Python", "Google HeAR", "NF4 Quantization", "Gradio", "NVIDIA Tesla T4"]
   },
 ];
 

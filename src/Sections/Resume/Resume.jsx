@@ -75,7 +75,7 @@ const Resume = () => {
                   videos using Mixtral AI, Edge TTS, and Stable Diffusion.
                 </p>
                 <p className="tech-stack">
-                  <strong>Tech:</strong> Python, AI/ML, MoviePy, Whisper
+                  <strong>Tech:</strong> Python, MoviePy, Whisper, Stable Diffusion, Edge TTS, Mixtral AI
                 </p>
               </div>
             </div>
@@ -96,7 +96,7 @@ const Resume = () => {
 
                 <div className="skill-category">
                   <h4>Tools & Frameworks</h4>
-                  <p>React, Git, VS Code, Gen AI,LLMS</p>
+                  <p>React, Git, VS Code, Gen AI,LLMs</p>
                 </div>
               </div>
 
