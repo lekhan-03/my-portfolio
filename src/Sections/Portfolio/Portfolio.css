@@ -1,0 +1,305 @@
+/* src/components/Portfolio.css */
+
+/* Main Container */
+.portfolio-page {
+  padding: 120px 10% 80px; /* Top padding clears the fixed navbar */
+  background-color: var(--bg-color); /* Deep Black */
+  min-height: 100vh;
+  color: white;
+}
+
+/* --- HEADER SECTION --- */
+.portfolio-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+
+.page-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.page-title span {
+  color: var(--accent-color); /* Green Accent */
+  position: relative;
+  display: inline-block;
+}
+
+/* Green underline effect */
+.page-title span::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: var(--accent-color);
+  bottom: 8px;
+  left: 0;
+  opacity: 0.3;
+}
+
+.creative-statement {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.creative-statement strong {
+  color: white;
+  font-weight: 600;
+}
+
+/* --- PROJECTS GRID --- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* --- CARD STYLING --- */
+.portfolio-card {
+  background: var(--card-bg); /* Lighter black */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #222;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover Effect: Lift up + Shadow + Green Border */
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: var(--accent-color);
+}
+
+/* Image Container */
+.card-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Zoom image on hover */
+.portfolio-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+/* Dark Overlay with Button */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-card:hover .overlay {
+  opacity: 1; /* Show on hover */
+}
+
+.view-btn {
+  padding: 12px 28px;
+  background: var(--accent-color);
+  border: none;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  transform: translateY(20px); /* Start slightly lower */
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .view-btn {
+  transform: translateY(0); /* Slide up into place */
+}
+
+/* Card Text Content */
+.card-content {
+  padding: 25px;
+}
+
+.category {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+  color: white;
+  font-weight: 600;
+}
+
+.card-content p {
+  color: #999;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .portfolio-page {
+    padding: 100px 5% 60px;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+  }
+}
+/* ... Keep your existing Portfolio CSS ... */
+
+/* --- MODAL STYLES --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  border-radius: 12px;
+  border: 1px solid #333;
+  overflow-y: auto; /* Scroll if content is too long */
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s;
+}
+
+.close-modal-btn:hover {
+  color: var(--accent-color);
+}
+
+.modal-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 1px solid #333;
+}
+
+.modal-text {
+  padding: 30px;
+  color: white;
+}
+
+.modal-category {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.modal-text h2 {
+  font-size: 2rem;
+  margin: 10px 0 20px;
+  line-height: 1.2;
+}
+
+.modal-summary {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.modal-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.tech-badge {
+  background: #2a2a2a;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid #444;
+}
+
+.modal-details-list {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-details-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: #aaa;
+}
+
+.modal-details-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Scrollbar styling for the modal */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-content::-webkit-scrollbar-track {
+  background: #111;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

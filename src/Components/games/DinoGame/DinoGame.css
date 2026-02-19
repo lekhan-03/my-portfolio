@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.dino-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Press Start 2P', monospace; /* Retro Arcade Font */
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --- Scoreboard --- */
+.score-board {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  background: #222;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  font-size: 0.8rem;
+  border: 2px solid #444;
+  border-bottom: none;
+  letter-spacing: 1px;
+}
+
+.hi-score {
+  color: #888;
+}
+
+/* --- Main Game Window --- */
+.game-window {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom, #20002c, #cbb4d4); /* Dusk Sky Gradient */
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #444;
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* --- Overlay (Start / Game Over) --- */
+.game-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  color: white;
+  text-align: center;
+}
+
+.game-overlay h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ff4757; /* Warning Red */
+  text-shadow: 2px 2px 0px #000;
+}
+
+.game-overlay p {
+  font-size: 0.7rem;
+  margin-bottom: 20px;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.restart-btn {
+  background: #00d664; /* Your Theme Green */
+  border: none;
+  padding: 12px 24px;
+  font-family: inherit;
+  font-size: 0.7rem;
+  cursor: pointer;
+  color: #000;
+  border-radius: 4px;
+  transition: transform 0.1s, background 0.2s;
+  font-weight: bold;
+}
+
+.restart-btn:hover {
+  transform: scale(1.05);
+  background: #00b555;
+}
+
+/* --- Game Characters --- */
+.dino {
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  position: absolute;
+  top: 135px; /* Aligned with ground */
+  left: 20px;
+  z-index: 2;
+  
+  /* FLIP TO FACE RIGHT */
+  transform: scaleX(-1); 
+  filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.3));
+}
+
+.dino.jump {
+  animation: jump 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cactus {
+  width: 30px;
+  height: 45px;
+  font-size: 30px;
+  position: absolute;
+  top: 140px;
+  left: 600px; /* Start off screen */
+  z-index: 1;
+  filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.3));
+}
+
+.cactus.animate {
+  animation: moveCactus 1.5s infinite linear;
+}
+
+/* --- Ground --- */
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 25px;
+  background: #3e2723;
+  border-top: 4px solid #5d4037;
+}
+
+/* --- Animations --- */
+@keyframes jump {
+  0% { top: 135px; }
+  40% { top: 50px; }  /* Jump Peak */
+  60% { top: 50px; }  /* Slight Hangtime */
+  100% { top: 135px; }
+}
+
+@keyframes moveCactus {
+  0% { left: 100%; }
+  100% { left: -50px; }
+}

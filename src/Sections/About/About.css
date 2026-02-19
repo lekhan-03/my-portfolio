@@ -1,0 +1,135 @@
+.about-section {
+  padding: 120px 10%;
+  background-color: #161616; /* Slightly lighter than pure black */
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.about-container {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Image Styling */
+.about-img-wrapper {
+  flex: 0.8;
+  position: relative;
+}
+
+.about-img-wrapper img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.about-img-wrapper:hover img {
+  transform: translateY(-10px);
+}
+
+/* Decorative Frame Behind Image */
+.img-frame {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--accent-color);
+  border-radius: 10px;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.about-img-wrapper:hover .img-frame {
+  transform: translate(10px, 10px);
+}
+
+/* Content Styling */
+.about-content {
+  flex: 1.2;
+}
+
+.section-subtitle {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.text-highlight {
+  color: white;
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.about-desc {
+  color: #bbb;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+}
+
+.about-divider {
+  width: 100px;
+  height: 2px;
+  background: #333;
+  margin-bottom: 30px;
+}
+
+/* Details Grid */
+.about-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.detail-item span {
+  font-weight: 600;
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.detail-item p {
+  color: #888;
+  margin: 0;
+}
+
+/* Download Button */
+.download-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: white;
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: var(--accent-color);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .about-container { flex-direction: column; }
+  .about-details { grid-template-columns: 1fr; }
+}

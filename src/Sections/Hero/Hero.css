@@ -1,0 +1,189 @@
+/* Container */
+.hero-section {
+  display: flex;
+  height: 100vh;
+  min-height: 700px;
+  width: 100%;
+  padding: 0 10%;
+  align-items: center;
+  position: relative;
+  background-color: var(--bg-color);
+  overflow: hidden;
+  padding-top: 80px; 
+}
+
+/* --- Left Side Text --- */
+.hero-text-side {
+  flex: 1;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sub-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  color: white;
+}
+
+.highlight {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent-color);
+  position: relative;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 35px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 20px;
+}
+
+.primary-btn {
+  padding: 14px 35px;
+  background-color: var(--accent-color);
+  color: #000;
+  border: 2px solid var(--accent-color);
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.secondary-btn {
+  padding: 14px 35px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #333;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Info Bar */
+.hero-info-bar {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.info-item p {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin: 0;
+}
+
+/* --- Right Side 3D --- */
+.hero-3d-side {
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+.canvas-wrapper {
+  position: absolute;
+  top: 0;
+  right: -20%; 
+  width: 140%;
+  height: 100%;
+}
+
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh; /* Ensure full screen usage even without 3D */
+    padding: 120px 5% 50px;
+    text-align: center;
+    justify-content: center; /* Center content vertically since 3D is gone */
+  }
+
+  .hero-text-side {
+    align-items: center;
+    width: 100%;
+    flex: none; /* Stop it from growing to fill empty space awkwardly */
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .btn-group {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .primary-btn, .secondary-btn {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+    max-width: 100% ;
+  }
+
+  /* --- HIDE 3D MESH ON MOBILE --- */
+  .hero-3d-side {
+    display: none; 
+  }
+
+  /* Adjust Info Bar layout since it now sits at the bottom */
+  .hero-info-bar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid #222;
+  }
+
+  .info-item {
+    min-width: 100px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 400px) {
+  .hero-title { font-size: 2.2rem; }
+  .btn-group { flex-direction: column; gap: 10px; width: 100%; }
+  .primary-btn, .secondary-btn { width: 100%; text-align: center; }
+}
