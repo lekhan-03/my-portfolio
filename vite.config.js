@@ -7,11 +7,9 @@ export default defineConfig({
     react({
       babel: {
         plugins: [['babel-plugin-react-compiler']],
+        
       },
     }),
   ],
-  server: {
-    host: true, // This exposes the server to the network
-    port: 5173, // You can specify a port, default is 5173
-  }
+ 
 })
