@@ -96,7 +96,7 @@ const Resume = () => {
 
                 <div className="skill-category">
                   <h4>Tools & Frameworks</h4>
-                  <p>React, Git, VS Code, Gen AI,LLMs</p>
+                  <p>React, Git, VS Code, Gen AI, LLMs</p>
                 </div>
               </div>
 
