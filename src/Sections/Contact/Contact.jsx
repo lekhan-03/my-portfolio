@@ -1,6 +1,7 @@
 import React from 'react';
 // 1. Import the icons you want
-import { FaLinkedinIn, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { SiGmail } from "react-icons/si";
 import './Contact.css';
 
 const Contact = () => {
@@ -47,9 +48,9 @@ const Contact = () => {
                 <FaInstagram />
               </a>
 
-              {/* WhatsApp (Uses api.whatsapp.com or wa.me link format) */}
-              <a href="https://wa.me/916364105424" target="_blank" rel="noopener noreferrer" className="social-icon">
-                <FaWhatsapp />
+              {/* Gmail */}
+              <a href="mailto:lekhandayananda@gmail.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <SiGmail/>
               </a>
             </div>
           </div>
